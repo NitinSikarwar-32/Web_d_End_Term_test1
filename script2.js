@@ -33,7 +33,10 @@ function disableCards() {
 
     resetBoard();
 }
-
+function resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+}
 function unflipCards() {
     setTimeout(() => {
         firstCard.classList.remove('flip');
@@ -43,10 +46,6 @@ function unflipCards() {
     }, 1500);
 }
 
-function resetBoard() {
-    [hasFlippedCard, lockBoard] = [false, false];
-    [firstCard, secondCard] = [null, null];
-}
 
 (function shuffle() {
     cards.forEach(card => {
